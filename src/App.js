@@ -9,7 +9,7 @@ function App() {
     // Convertir todas las tareas existentes que son cadenas en objetos
     const newTaskList = taskList.map(task => typeof task === 'string' ? {text: task, completed: false} : task)
     setTaskList(newTaskList)
-  }, [])
+  }, [taskList])
   return (
   
     <div className='px-12'>

@@ -5,8 +5,10 @@ const Input = ({taskList, setTaskList}) => {
     const [input, setInput] = useState('')
     const handleAddTask = (e) => {
     e.preventDefault()
-    setTaskList([...taskList, { text: input, completed: false }])
-    setInput('')
+    if (input.trim() !== '') {
+      setTaskList([...taskList, { text: input, completed: false }])
+      setInput('')
+    }
     }
   return (
     <form className='flex flex-row items-center gap-3'>
